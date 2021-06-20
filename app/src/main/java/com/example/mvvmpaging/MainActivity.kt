@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
 
         model.getAll().observe(this, Observer {
             noticeAdapter.setList(it.content)
-//            noticeAdapter.notifyItemRangeChanged((page - 1) * 10, 10)
+            noticeAdapter.notifyItemRangeChanged((page - 1) * 10, 10)
         })
 
         binding.mainRecyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener(){
