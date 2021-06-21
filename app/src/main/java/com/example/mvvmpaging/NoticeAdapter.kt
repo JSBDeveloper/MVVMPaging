@@ -29,16 +29,15 @@ class NoticeAdapter(): RecyclerView.Adapter<NoticeAdapter.NoticeViewHolder>() {
 
     fun setList(notice: MutableList<Content>) {
         items.addAll(notice)
-//        notice.apply {
-//            val diffCallback = NoticeDiffUtilCallback(items, notice)
-//            val diffResult = DiffUtil.calculateDiff(diffCallback)
-//
-//            items.run {
-//                addAll(notice)
-//                diffResult.dispatchUpdatesTo(this@NoticeAdapter)
-//            }
-//        }
+        notice.apply {
+            val diffCallback = NoticeDiffUtilCallback(items, notice)
+            val diffResult = DiffUtil.calculateDiff(diffCallback)
 
+            items.run {
+                addAll(notice)
+                diffResult.dispatchUpdatesTo(this@NoticeAdapter)
+            }
+        }
     }
 
     inner class NoticeViewHolder(private val binding: LayoutNoticeItemBinding) :
