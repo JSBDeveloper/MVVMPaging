@@ -28,7 +28,7 @@ class NoticeAdapter(): RecyclerView.Adapter<NoticeAdapter.NoticeViewHolder>() {
     }
 
     fun setList(notice: MutableList<Content>) {
-        items.addAll(notice)
+//        items.addAll(notice)
         notice.apply {
             val diffCallback = NoticeDiffUtilCallback(items, notice)
             val diffResult = DiffUtil.calculateDiff(diffCallback)
